@@ -1,0 +1,12 @@
+
+
+.tile-default {
+    border: 1px solid black;
+    min-height: 50px;
+    min-width: 50px;
+    padding: inherit;
+}
+
+.tile-default:hover {
+    cursor: pointer;
+}

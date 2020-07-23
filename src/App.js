@@ -1,14 +1,29 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+import './App.scss';
+import { SprkButton } from '@sparkdesignsystem/spark-react';
 import Landing from './components/Landing/Landing';
+import Game from './components/Game/Game'
 
 function App() {
   return (
-    <div className="App">
-      <div className="App-header">
-        <Landing />
+    <Router>
+      <div className="App">
+        <div className="App-header">
+          <Link to="/">
+            <SprkButton variant="secondary">
+              Home
+            </SprkButton>
+          </Link>
+        </div>
+        <div className="App-body">
+          <Route path="/" exact component={Landing} />
+          <Route path="/play" component={Game} />
+        </div>
       </div>
-    </div>
+      
+    </Router>
   );
 }
 
