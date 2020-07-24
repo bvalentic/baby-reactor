@@ -8,5 +8,5 @@ $sprk-webfonts:
 @import 'node_modules/@sparkdesignsystem/spark/spark.scss';
 
 body {
-    border: 50px solid gold;
+    border: 50px solid $sprk-yellow-tint-75;
 }

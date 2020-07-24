@@ -1,9 +1,10 @@
-
+@import "../../../node_modules/@sparkdesignsystem/spark/spark";
 
 .tile-default {
-    border: 1px solid black;
-    min-height: 50px;
-    min-width: 50px;
+    background-color: $sprk-gray;
+    border: 1px solid $sprk-black;
+    min-height: 60px;
+    min-width: 60px;
     padding: inherit;
 }
 

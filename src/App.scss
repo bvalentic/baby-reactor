@@ -1,3 +1,4 @@
+@import "../node_modules/@sparkdesignsystem/spark/spark";
 @import 'styles.scss';
 
 .App {
@@ -16,24 +17,24 @@
 }
 
 .App-body {
-  background-color: yellow;
+  background-color: $sprk-yellow;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: black;
+  color: $sprk-black;
 }
 
 .App-header {
-  background-color: yellow;
+  background-color: $sprk-yellow;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: black;
+  color: $sprk-black;
 }
 
 .App-link {

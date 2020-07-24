@@ -18,7 +18,7 @@ function App() {
             </SprkButton>
           </Link>
         </div>
-        <div>
+        <div className="App-body">
           <Route path="/" exact component={Landing} />
           <Route path="/play" component={Game} />
           <Route path="/high-scores" component={HighScores} />

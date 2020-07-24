@@ -1,12 +1,16 @@
-
+@import "../../../node_modules/@sparkdesignsystem/spark/spark";
 
 .hs-body {
     align-items: center;
-    background-color: yellow;
-    color: black;
+    background-color: $sprk-yellow;
+    color: $sprk-black;
     display: flex;
     flex-direction: column;
     font-size: calc(10px + 2vmin);
     min-height: 100vh;
     padding-top: 1em;
+}
+
+.title {
+    margin-bottom: 10px;
 }

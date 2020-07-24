@@ -1,9 +1,10 @@
+@import "../../../node_modules/@sparkdesignsystem/spark/spark";
 
 .buttons Button, .buttons Link {
     margin: 1em;
 }
 
 .title {
-    color: black;
+    color: $sprk-black;
     padding: 25px;
 }

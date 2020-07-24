@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 import { SprkTable } from '@sparkdesignsystem/spark-react';
 import './HighScores.scss';
 
-const Score = (props) => (
-    {
-        name: props.score.name,
-        score: props.score.score,
-        time: props.score.time
-    }
-)
+// const Score = (props) => (
+//     {
+//         name: props.score.name,
+//         score: props.score.score,
+//         time: props.score.time
+//     }
+// )
 
 export default class HighScores extends Component{
     constructor(props) {
@@ -45,7 +45,7 @@ export default class HighScores extends Component{
     setScores() {
         // need to return an array of objects with name, score, time
         let scoreList = [];
-        this.state.scores.map((currentScore, i) => {
+        this.state.scores.forEach((currentScore, i) => {
             scoreList.push((currentScore))
         })
         return scoreList;
@@ -54,7 +54,7 @@ export default class HighScores extends Component{
     render() {
         return (
             <div className="hs-body"> 
-                <h3>High Scores</h3>
+                <h3 className="title">High Scores</h3>
                 <div>
                 <SprkTable
                     additionalTableClasses="sprk-b-Table--spacing-medium"
