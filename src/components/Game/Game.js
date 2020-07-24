@@ -7,7 +7,7 @@ export default class Game extends Component {
         super(props);
 
         this.state = {
-            boardSize: 10,
+            boardLength: 10,
             numShips: 5
         };
     }
@@ -20,7 +20,7 @@ export default class Game extends Component {
         return (
             <>
                 <div>It's game time!</div>
-                <Board className="board-default" boardSize={this.state.boardSize} numShips={this.state.numShips}>
+                <Board className="board-default" boardLength={this.state.boardLength} numShips={this.state.numShips}>
 
                 </Board>
             </>
