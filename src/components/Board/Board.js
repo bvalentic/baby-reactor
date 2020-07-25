@@ -46,9 +46,6 @@ export default function Board(props) {
         // have tile display number of marked tiles in surrounding area
         for (var i=0; i < tiles.length; i++) {
             for(var j=0; j < tiles[i].length; j++) {
-                if (i === 4 && j === 4) {
-                    console.log(i,j)
-                }
                 checkMines(i, j);
             }
         }
@@ -67,22 +64,22 @@ export default function Board(props) {
                 if (tiles[i-1][j-1] === mine) {mineCount++}
             }
             if (tiles[i-1][j] === mine) {mineCount++}
-            if (j < 9) {
+            if (j < tiles[j].length) {
                 if (tiles[i-1][j+1] === mine) {mineCount++}
             }
         }
         if (j > 0) {
             if (tiles[i][j-1] === mine) {mineCount++}
         }
-        if (j < 9) {
+        if (j < tiles[j].length - 1) {
             if (tiles[i][j+1] === mine) {mineCount++}
         }
-        if (i < 9) {
-            if (j < 9) {
+        if (i < tiles[i].length - 1) {
+            if (j > 0) {
                 if (tiles[i+1][j-1] === mine) {mineCount++}
             }
             if (tiles[i+1][j] === mine) {mineCount++}
-            if (j < 9) {
+            if (j < tiles[j].length - 1) {
                 if (tiles[i+1][j+1] === mine) {mineCount++}
             }
         }
@@ -93,7 +90,14 @@ export default function Board(props) {
 
     const revealBoard = () => {
         // show all tile values on the board
-        
+        for (var i = 0; i < tiles.length; i++) {
+            for (var j = 0; j < tiles[i].length; j++) {
+                let tileElement = document.getElementById(j.toString() + i.toString())
+                console.log(tileElement.innerHTML);
+                break;
+                // handleOnClick(tileElement)
+            }
+        }
     }
 
     const generateBoard = () => {
@@ -104,8 +108,12 @@ export default function Board(props) {
         let rows = tiles.map(function (item, i){
             let entry = item.map(function (element, j) {
                 return ( 
-                    <td className="board-tile" key={j}> 
-                        <Tile value={tiles[i][j]} onClick={handleOnClick} revealed={false} key={tiles[i][j]}>
+                    <td className="board-tile" key={j} id={j.toString() + i.toString()}>
+                        <Tile   value={tiles[i][j]}
+                                onClick={handleOnClick}
+                                revealed={true}
+                                // key={tiles[i][j]}
+                                >
                             {tiles[i][j]}
                         </Tile>
                     </td>
